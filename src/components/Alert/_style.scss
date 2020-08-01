@@ -1,0 +1,61 @@
+.alert {
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: $alert-animation;
+  min-width: $alert-min-width;
+  padding: $alert-padding;
+  border-radius: $alert-border-radius;
+  &-default {
+    background: $default;
+  }
+  &-success {
+    background: $success;
+  }
+  &-danger {
+    background: $danger;
+  }
+  &-warning {
+    background: $warning;
+  }
+}
+
+.alert-title {
+  color: $white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  &-default {
+  }
+  &-success {
+  }
+  &-danger {
+  }
+  &-warning {
+  }
+}
+
+.alert-content {
+  color: $white;
+  font-size: $font-size-sm;
+  &-default {
+  }
+  &-success {
+  }
+  &-danger {
+  }
+  &-warning {
+  }
+}
+
+.alert-closeBtn {
+  font-size: $font-size-sm;
+  color: $white;
+  position: absolute;
+  top: $alert-closeBtn-top;
+  right: $alert-closeBtn-right;
+  cursor: pointer;
+  &:hover {
+    opacity: $alert-closeBtn-hover-opacity;
+  }
+}
