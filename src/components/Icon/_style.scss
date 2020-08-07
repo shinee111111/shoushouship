@@ -1,0 +1,5 @@
+@each $className, $color in $theme-colors {
+  .icon-#{$className} {
+    color: $color;
+  }
+}
