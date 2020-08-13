@@ -1,0 +1,100 @@
+.input-wrapper {
+  width: 240px;
+  display: inline-flex;
+  margin-bottom: 30px;
+  position: relative;
+  .input-inner {
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    color: $input-color;
+    border: $input-border-width solid $input-border-color;
+    font-weight: $font-weight-base;
+    line-height: $input-line-height;
+    background: $input-bg;
+    box-shadow: $input-box-shadow;
+    border-radius: $input-border-radius;
+    transition: $input-transition;
+    padding-right: 28px;
+    &::-webkit-input-placeholder {
+      color: $input-placeholder-color;
+    }
+    &:focus {
+      color: $input-focus-color;
+      background: $input-focus-bg;
+      border-color: $input-focus-border-color;
+      box-shadow: $input-focus-box-shadow;
+    }
+    &:disabled {
+      background: $input-disabled-bg;
+      border-color: $input-disabled-border-color;
+    }
+  }
+  .input-suffix {
+    font-size: 16px;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 10px;
+  }
+  .input-prepend {
+    z-index: 1;
+    margin-right: -2px;
+    background: white;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    @include  border-right-radius(0);
+  }
+  .input-append {
+    margin-left: -2px;
+    background: white;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    @include  border-left-radius(0);
+  }
+}
+
+.input-wrapper-sm {
+  width: 180px;
+  .input-inner {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    font-size: $btn-font-size-sm;
+    border-radius: $input-border-radius-sm;
+  }
+  &.input-wrapper-icon {
+    .input-inner {
+      padding-right: 32px;
+    }
+    .input-suffix {
+      font-size: 12px;
+    }
+  }
+}
+
+.input-wrapper-lg {
+  width: 320px;
+  .input-inner {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $btn-font-size-lg;
+    border-radius: $input-border-radius-lg;
+  }
+  &.input-wrapper-icon {
+    .input-inner {
+      padding-right: 45px;
+    }
+    .input-suffix {
+      font-size: 20px;
+    }
+  }
+}

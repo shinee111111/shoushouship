@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useRef, createContext, CSSProperties, FC, RefObject } from 'react';
 import classNames from 'classnames';
 import { MenuItemProps } from './menuItem'
 
@@ -6,7 +6,7 @@ type MenuMode = 'horizontal' | 'vertical'
 type SelectedCallback = (selectedIndex: string) => void
 export interface MenuProps {
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   mode?: MenuMode;
   defaultIndex?: string;
   onSelect?: SelectedCallback;
@@ -17,14 +17,16 @@ interface IMenuContext {
   onSelect?: SelectedCallback;
   mode?: MenuMode;
   defaultOpenSubMenu?: string[];
+  componentRef?: RefObject<HTMLElement>;
 }
 
 export const MenuContext = createContext<IMenuContext>({ index: '0' }) // 理论上应传入 Menu.defaultProps.defaultIndex
 
-const Menu: React.FC<MenuProps> = (props) => {
+export const Menu: FC<MenuProps> = (props) => {
   const { className, style, mode, defaultIndex, onSelect, children, defaultOpenSubMenu } = props;
 
   const [currentActive, setActive] = useState(defaultIndex);
+  const componentRef = useRef<HTMLUListElement>(null)
 
   const classes = classNames('viking-menu', className, {
     'menu-vertical': mode === 'vertical',
@@ -40,7 +42,8 @@ const Menu: React.FC<MenuProps> = (props) => {
     index: !currentActive ? '0' : currentActive,
     onSelect: handleClick,
     mode,
-    defaultOpenSubMenu
+    defaultOpenSubMenu,
+    componentRef
   }
 
   const renderChildren = () => {
@@ -60,6 +63,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   return (
     <ul
+      ref={componentRef}
       style={style}
       className={classes}
       data-testid="test-menu"

@@ -32,7 +32,7 @@ storiesOf('Button Component', module)
   //   }
   // })
   .add('Button', defaultButton)
-  .add('不同尺寸的 button', buttonWithSize, {
+  .add('不同尺寸的 Button', buttonWithSize, {
     // info: {
     //   inline: false
     // }
