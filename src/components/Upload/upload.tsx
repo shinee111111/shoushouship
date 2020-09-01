@@ -173,9 +173,11 @@ export const Upload: FC<UploadProps> = (props) => {
 
   console.log(fileList)
 
-  const _children = children ? children : <Button
-    btnType='primary'
-  >Upload File</Button>
+  const _children = children
+    ? children
+    : <Button
+      btnType='primary'
+    >Upload File</Button>
 
   return (
     <div className="viking-upload-component">

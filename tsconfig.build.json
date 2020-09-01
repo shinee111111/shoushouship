@@ -1,0 +1,20 @@
+{
+  // 关于编译的配置
+  "compilerOptions": {
+    "outDir": "dist", // 打包出的路径
+    "module": "ESNext", // 当前模块化规范
+    "target": "ES5", // 转义出的目标规范
+    "declaration": true, // 生成 xxx.d.ts 类型声明文件
+    "jsx": "react", // jsx 构造规则 即将 js 文件的内容使用 React.createElement 去输出
+    "moduleResolution": "node", // 使用 node 查找模块的方式
+    "allowSyntheticDefaultImports": true // 开启 default 引入
+  },
+  // 关于文件的配置
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx"
+  ]
+}

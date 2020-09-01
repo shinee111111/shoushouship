@@ -1,5 +1,4 @@
 ---
-## React 高仿 Antd
-
+### React Components UI library like Antd
 ---
-Author: ShouShou
+##### Author: ShouShou
